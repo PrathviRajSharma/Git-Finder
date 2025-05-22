@@ -1,0 +1,321 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #24292e;
+  color: #fafbfc;
+}
+
+#sideNav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 100vh;
+  background-color: rgba(250, 251, 252, 0.2235294118);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  color: #fafbfc;
+  z-index: 100;
+  transition: 0.5s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+#sideNav #side-nav {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  text-align: right;
+}
+#sideNav #side-nav #closeSideNav {
+  position: relative;
+  padding: 1rem 0;
+}
+#sideNav #side-nav #closeSideNav .bar1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: rotate(45deg);
+  width: 2rem;
+  height: 1px;
+  background-color: #fff;
+}
+#sideNav #side-nav #closeSideNav .bar2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: rotate(-45deg);
+  width: 2rem;
+  height: 1px;
+  background-color: #fff;
+}
+#sideNav #side-nav p {
+  font-weight: 900;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px #24292e;
+}
+
+.userNotFound {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fafbfc;
+  color: #24292e;
+  padding: 1rem 2rem;
+  border-radius: 0.3rem;
+  transition: 0.5s all ease-in-out;
+}
+
+.breaker {
+  width: 100%;
+  height: 2px;
+  background-color: rgba(250, 251, 252, 0.1176470588);
+}
+
+main {
+  width: 90%;
+  margin: 0 auto;
+  height: 100%;
+  position: relative;
+}
+main nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+main nav .logo h1 {
+  font-size: 1.2rem;
+}
+main nav .nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+main nav .nav-links a {
+  color: #fafbfc;
+  font-weight: 500;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  display: none;
+}
+main nav .nav-links .side {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+main nav .nav-links .side .bar {
+  width: 1.5rem;
+  height: 0.5px;
+  background-color: #fafbfc;
+}
+main nav .nav-links .side:nth-child(2) .bar:nth-child(2) {
+  height: 1.4px;
+}
+main nav .nav-links .side .bar:nth-child(3) {
+  height: 2px;
+}
+main .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+  gap: 0.8rem;
+}
+main .container h2 {
+  font-size: 2.25rem;
+  text-align: center;
+  line-height: none;
+  letter-spacing: 1.5px;
+}
+main .container .input {
+  width: 100%;
+}
+main .container .input input {
+  width: inherit;
+  padding: 0.7rem;
+  color: white;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  font-size: 1rem;
+}
+main .container .button {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  padding-bottom: 3rem;
+}
+main .container .button input {
+  padding: 0.6rem 1.5rem;
+  font-size: 1.2rem;
+  background-color: royalblue;
+  color: #fafbfc;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+}
+main .container .button input:active {
+  scale: 0.9;
+}
+main .container .userCard {
+  width: 100%;
+  height: 100%;
+  background-color: #2b3137;
+  border-radius: 10px;
+  border: 2px solid rgba(250, 251, 252, 0.1176470588);
+}
+main .container .userCard .card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+main .container .userCard .card .profile {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+main .container .userCard .card .profile .image {
+  width: 5rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+main .container .userCard .card .profile .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+main .container .userCard .card .profile .title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0 1.2rem;
+  overflow: hidden;
+}
+main .container .userCard .card .profile .title h4 {
+  font-size: 1.2rem;
+}
+main .container .userCard .card .profile .title p {
+  color: rgba(250, 251, 252, 0.4156862745);
+  font-size: 0.9rem;
+  width: 100%;
+}
+main .container .userCard .card .bio {
+  padding: 0 1rem 1rem 1rem;
+}
+main .container .userCard .card .bio p {
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+main .container .userCard .card .otherDetails {
+  padding: 1rem;
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+main .container .userCard .card .otherDetails h4 {
+  font-size: 1.1rem;
+}
+main .container .userCard .card .otherDetails h4 span {
+  color: rgba(250, 251, 252, 0.6156862745);
+  font-weight: 400;
+}
+main footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+main footer p span {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+@media (min-width: 700px) {
+  main nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+  main nav .logo h1 {
+    font-size: 2.5rem;
+  }
+  main nav .nav-links a {
+    display: block;
+    font-size: 1rem;
+  }
+  main nav .nav-links .bar {
+    display: none;
+  }
+  main .container {
+    gap: 1rem;
+    width: 65%;
+    margin: 0 auto;
+  }
+  main .container h2 {
+    font-size: 3rem;
+  }
+  main .container .input {
+    display: flex;
+    justify-content: center;
+  }
+  main .container .input input {
+    padding: 0.8rem;
+    font-size: 1.2rem;
+  }
+  main .container .button input {
+    padding: 0.8rem 1.8rem;
+    font-size: 1.3rem;
+  }
+  main .container .userCard .card .profile .image {
+    width: 5rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+  }
+  main .container .userCard .card .profile .image img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 2px solid white;
+  }
+  main .container .userCard .card .profile .title h4 {
+    font-size: 1.38rem;
+  }
+  main .container .userCard .card .profile .title p {
+    font-size: 1rem;
+  }
+  main .container .userCard .card .bio p {
+    font-size: 1.18rem;
+  }
+  main .container .userCard .card .otherDetails {
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  main footer p {
+    font-size: 1.2rem;
+  }
+}/*# sourceMappingURL=style.css.map */
