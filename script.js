@@ -1,17 +1,49 @@
+const userCard = document.querySelector('.userCard');
+const skeletonLoader = `
+  <div class="skeleton-card">
+    <div class="profile">
+      <div class="image"><div class="skeleton"></div></div>
+      <div class="title">
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+      </div>
+    </div>
+    <div class="bio"><div class="skeleton"></div></div>
+    <div class="breaker"></div>
+    <div class="otherDetails">
+      <div class="skeleton"></div>
+      <div class="skeleton"></div>
+      <div class="skeleton"></div>
+      <div class="skeleton"></div>
+      <div class="skeleton"></div>
+      <div class="skeleton"></div>
+    </div>
+    <div class="breaker"></div>
+    <div class="otherDetails">
+      <div class="skeleton"></div>
+      <div class="skeleton"></div>
+      <div class="skeleton"></div>
+      <div class="skeleton"></div>
+    </div>
+  </div>
+`;
+userCard.innerHTML = skeletonLoader;  
 function gitFinder() {
   let userName = document.querySelector("#userName");
   let submitBtn = document.querySelector("#submit");
   let useCard = document.querySelector(".userCard");
   let userNF = document.querySelector(".userNotFound");
-
+  
   submitBtn.addEventListener("click", function () {
     let userNameValue = userName.value;
     fetch(`https://api.github.com/users/${userNameValue}`)
       .then((res) => {
         if (!res.ok) {
           userNF.style.top = `50%`;
+          userCard.innerHTML = '';
           setTimeout(() => {
             userNF.style.top = `-100%`;
+            userCard.innerHTML = skeletonLoader;
           }, 3000);
         } else {
           return res.json();
@@ -93,3 +125,4 @@ function sideBar(){
     })
 }
 sideBar();
+
